@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Каталог | RUSboats</title>
+</head>
+<body>
+<header class="header">
+    <div class="header-container">
+        <a href="#" class="logo">
+            <img src="../assets/images/logo.svg" alt="Logo">
+        </a>
+
+        <nav class="nav" id="nav-menu">
+            <ul class="nav-list">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="index2.html">О нас</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <button class="burger" id="burger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.getElementById('burger-btn');
+    const nav = document.getElementById('nav-menu');
+
+    burger.addEventListener('click', () => {
+        // Переключаем класс для меню
+        nav.classList.toggle('active');
+        // Переключаем класс для анимации кнопки
+        burger.classList.toggle('open');
+        
+        // Блокируем скролл при открытом меню
+        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
+    });
+});
+</script>
+<section class="hero-section">
+    <div class="hero-content-wrapper">
+        <div class="hero-content">
+            <h1>R-top: Агентство полного цикла разработки</h1>
+            <p>Мы создаем инновационные цифровые продукты от идеи до запуска, обеспечивая комплексный подход и непревзойденное качество.</p>
+            <a href="#" class="btn-primary">Узнать больше</a>
+        </div>
+    </div>
+</section>
+<div id="modal-form" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" id="close-modal">&times;</button>
+        
+        <form class="r-top-form">
+            <h2>Оставить заявку</h2>
+            <p>Заполните форму, и специалисты R-top свяжутся с вами в ближайшее время.</p>
+            
+            <div class="form-group">
+                <input type="text" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="E-mail" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Опишите ваш проект" rows="4"></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit">Отправить запрос</button>
+        </form>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Элементы бургера (уже были)
+    const burger = document.getElementById('burger-btn');
+    const nav = document.getElementById('nav-menu');
+
+    // Элементы модального окна
+    const modal = document.getElementById('modal-form');
+    const openModalBtn = document.querySelector('.btn-primary'); // Кнопка "Узнать больше"
+    const closeModalBtn = document.getElementById('close-modal');
+
+    // Открытие модалки
+    if (openModalBtn) {
+        openModalBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Отменяем переход по ссылке
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Запрещаем скролл сайта
+        });
+    }
+
+    // Закрытие модалки по кнопке
+    closeModalBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+
+    // Закрытие при клике на темную область вне формы
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Логика бургера (сохраняем)
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        burger.classList.toggle('open');
+        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
+    });
+});
+</script>
+<section class="services-section">
+    <div class="services-container">
+        <h2 class="section-title">Наши услуги</h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Веб-разработка</h3>
+                <p>Создание сложных экосистем, личных кабинетов и высоконагруженных платформ.</p>
+            </div>
+            <div class="service-card">
+                <h3>Мобильные приложения</h3>
+                <p>Проектирование и запуск приложений для iOS и Android любой сложности.</p>
+            </div>
+            <div class="service-card">
+                <h3>UX/UI Дизайн</h3>
+                <p>Глубокая проработка пользовательских сценариев и современный визуал.</p>
+            </div>
+            <div class="service-card">
+                <h3>Маркетинг</h3>
+                <p>SEO, контекстная реклама и стратегия продвижения вашего продукта.</p>
+            </div>
+        </div>
+
+        <div class="services-banner-wrapper">
+            <div class="banner-js-468" id="service-banner-container">
+                <div class="banner-glow-effect"></div>
+                
+                <div class="banner-js-track" id="service-banner-track">
+                    <span class="banner-item">
+                        <span class="b-dot"></span> АНАЛИТИКА <span class="b-sep">•</span> 
+                        ПРОЕКТИРОВАНИЕ <span class="b-sep">•</span> 
+                        РАЗРАБОТКА <span class="b-sep">•</span> 
+                        ТЕСТИРОВАНИЕ <span class="b-sep">•</span> 
+                        ПОДДЕРЖКА&nbsp;
+                    </span>
+                    <span class="banner-item">
+                        <span class="b-dot"></span> АНАЛИТИКА <span class="b-sep">•</span> 
+                        ПРОЕКТИРОВАНИЕ <span class="b-sep">•</span> 
+                        РАЗРАБОТКА <span class="b-sep">•</span> 
+                        ТЕСТИРОВАНИЕ <span class="b-sep">•</span> 
+                        ПОДДЕРЖКА&nbsp;
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* БАЗОВЫЙ КОД БЕЗ ИЗМЕНЕНИЙ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.services-section {
+    padding: 100px 0;
+    background-color: #ECE8ED;
+}
+
+.services-container {
+    padding: 0 100px; 
+    width: 100%;
+}
+
+.section-title {
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    color: #007bff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.service-card {
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.service-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* ИЗМЕНЕННЫЕ СТИЛИ БАННЕРА 468x60 */
+.services-banner-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.banner-js-468 {
+    width: 468px;
+    height: 60px;
+    background: #1a1a1a; /* Изменено на темный стиль */
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 123, 255, 0.3); /* Синяя рамка */
+}
+
+/* Анимация перелива */
+.banner-glow-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.1), transparent);
+    animation: bannerLight 4s infinite linear;
+}
+
+@keyframes bannerLight {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.banner-js-track {
+    display: flex;
+    white-space: nowrap;
+    position: absolute;
+    left: 0;
+    will-change: transform;
+    z-index: 2;
+}
+
+.banner-item {
+    color: #ffffff; /* Текст белый */
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Элементы декора как в большом баннере */
+.b-sep {
+    color: #4FB795; /* Ваш изумрудный цвет */
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.b-dot {
+    width: 5px;
+    height: 5px;
+    background: #007bff;
+    border-radius: 50%;
+    margin: 0 15px;
+    box-shadow: 0 0 5px #007bff;
+}
+
+/* Адаптив из вашего кода */
+@media (max-width: 1024px) {
+    .services-container {
+        padding: 0 20px;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .banner-js-468 {
+        width: 100%;
+        max-width: 468px;
+    }
+}
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const track = document.getElementById('service-banner-track');
+        const container = document.getElementById('service-banner-container');
+        
+        let position = 0;
+        let speed = 1.2;
+        let isHovered = false;
+
+        function animate() {
+            const currentSpeed = isHovered ? speed * 0.2 : speed;
+            position -= currentSpeed;
+
+            if (Math.abs(position) >= track.offsetWidth / 2) {
+                position = 0;
+            }
+
+            track.style.transform = `translateX(${position}px)`;
+            requestAnimationFrame(animate);
+        }
+
+        container.addEventListener('mouseenter', () => isHovered = true);
+        container.addEventListener('mouseleave', () => isHovered = false);
+
+        animate();
+    });
+</script>
+<section class="it-integrated-block">
+    <div class="services-container"> <div class="content-top-row">
+            <div class="text-side">
+                <span class="eyebrow">Инновации в действии</span>
+                <h2 class="title-typography">Создаем будущее вместе</h2>
+                <p class="description-typography">
+                    Мы используем передовые подходы к разработке ПО, превращая сложные идеи в интуитивно понятные цифровые продукты. Наша команда обеспечивает полный цикл: от кода до запуска.
+                </p>
+            </div>
+
+            <div class="photo-side">
+                <div class="collage-container">
+                    <div class="img-box item-1">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" alt="Cybersecurity">
+                    </div>
+                    <div class="img-box item-2">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Hardware">
+                    </div>
+                    <div class="img-box item-3">
+                        <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=400&q=80" alt="Tech">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="animated-banner-wrapper">
+            <div class="banner-728-90-animated">
+                <div class="banner-glow"></div>
+                <div class="banner-inner">
+                    <div class="banner-message">
+                        <span class="live-indicator">LIVE</span>
+                        <p>Получите экспертную консультацию по вашему стеку технологий</p>
+                    </div>
+                    <a href="#" class="pulse-button">Начать чат</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-main">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">
+                    <img src="../assets/images/logo.svg" alt="Logo">
+                </a>
+                <p class="footer-text">
+                    Создаем цифровые решения для бизнеса любого масштаба. От идеи до реализации и поддержки.
+                </p>
+                <div class="footer-socials">
+                    <a href="#" class="social-link">TG</a>
+                    <a href="#" class="social-link">VK</a>
+                    <a href="#" class="social-link">BE</a>
+                </div>
+            </div>
+
+            <div class="footer-nav">
+                <h4 class="footer-title">Навигация</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contacts">
+                <h4 class="footer-title">Контакты</h4>
+                <p>Москва, ул. Технологий, 42</p>
+                <p><a href="tel:+79990000000" class="contact-link">+7 (999) 000-00-00</a></p>
+                <p><a href="mailto:info@agency.ru" class="contact-link">info@agency.ru</a></p>
+            </div>
+
+            <div class="footer-cta">
+                <div class="mini-banner">
+                    <span class="mini-badge">Ready to start?</span>
+                    <a href="#" class="footer-btn">Обсудить проект</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Digital Agency. Все права защищены.</p>
+            <div class="footer-legal">
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
